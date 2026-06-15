@@ -4,59 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>أكاديمية مربح الرقمية - نحو القمة</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+/* إعدادات عامة بنمط التطبيقات الذكية */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; }
 
-/* الخلفية المميزة والألوان الهادئة المريحة للعين */
 body { 
-    background: linear-gradient(135deg, #e6eef8 0%, #f3f7fa 100%); 
+    background: linear-gradient(135deg, #f0f4f9 0%, #f6f9fc 100%); 
     background-attachment: fixed;
     color: #0F2D52; 
+    -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width:1200px; margin:auto; padding:20px; }
+.container { max-width:1100px; margin:auto; padding:25px; }
     
-/* قسم الشعارات والهيدر */
-.header-section { background: white; padding: 20px; box-shadow: 0 4px 15px rgba(15, 45, 82, 0.05); border-bottom: 4px solid #C9A227; }
-.header-container { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.logo-box { max-width: 140px; height: auto; }
+/* الهيدر العلوي - نمط Lovable العصري النظيف */
+.header-section { 
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px);
+    padding: 20px; 
+    box-shadow: 0 4px 20px rgba(15, 45, 82, 0.04); 
+    border-bottom: 3px solid #C9A227;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-container { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+.logo-box { max-width: 120px; height: auto; transition: 0.3s; }
 .logo-box img { width: 100%; height: auto; object-fit: contain; }
 .title-box { text-align: center; flex: 1; }
-.title-box h1 { font-size: 32px; font-weight: 800; color: #0F2D52; margin-bottom: 5px; }
-.title-box p { font-size: 18px; color: #C9A227; font-weight: 700; }
+.title-box h1 { font-size: 28px; font-weight: 800; color: #0F2D52; letter-spacing: -0.5px; }
+.title-box p { font-size: 15px; color: #C9A227; font-weight: 700; margin-top: 3px; }
 
-/* قسم جدول الاختبارات */
-.schedule-section { background: white; padding: 30px; border-radius: 15px; margin: 40px auto; box-shadow: 0 10px 25px rgba(15, 45, 82, 0.06); text-align: center; }
-.schedule-section h2 { font-size: 26px; color: #0F2D52; margin-bottom: 5px; font-weight: 800; position: relative; display: inline-block; }
-.schedule-section .sub-title { color: #55687d; font-size: 14px; margin-bottom: 20px; }
-.schedule-container { max-width: 750px; margin: auto; border: 2px solid #edf3f9; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-.schedule-container:hover { transform: scale(1.01); box-shadow: 0 8px 25px rgba(15, 45, 82, 0.12); }
+/* قسم جدول الاختبارات - لوحة عرض رئيسية */
+.schedule-section { background: white; padding: 30px; border-radius: 20px; margin: 30px auto; box-shadow: 0 10px 30px rgba(15, 45, 82, 0.03); text-align: center; border: 1px solid rgba(15, 45, 82, 0.05); }
+.schedule-section h2 { font-size: 24px; color: #0F2D52; font-weight: 800; margin-bottom: 5px; }
+.schedule-section .sub-title { color: #6b7280; font-size: 13px; margin-bottom: 25px; }
+.schedule-container { max-width: 700px; margin: auto; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.schedule-container:hover { transform: scale(1.02); box-shadow: 0 15px 35px rgba(15, 45, 82, 0.1); }
 .schedule-img { width: 100%; height: auto; display: block; margin: auto; cursor: pointer; }
-.btn-schedule { display: inline-block; background: #C9A227; color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3); }
-.btn-schedule:hover { background: #0F2D52; transform: translateY(-2px); }
+.btn-schedule { display: inline-flex; align-items: center; gap: 8px; background: #C9A227; color: white; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 25px; transition: 0.3s; box-shadow: 0 4px 14px rgba(201, 162, 39, 0.25); font-size: 15px; }
+.btn-schedule:hover { background: #0F2D52; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15, 45, 82, 0.2); }
 
-/* قسم الصفوف الدراسية */
-.main-title { text-align: center; margin: 40px 0 20px; font-size: 28px; font-weight: 800; color: #0F2D52; }
-.classes-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:25px; margin-bottom: 40px; }
-.class-card { background:white; padding:30px; border-radius:15px; box-shadow: 0 10px 25px rgba(15, 45, 82, 0.06); text-align: center; transition:0.3s; border-top: 4px solid #0F2D52; }
-.class-card:hover { transform: translateY(-5px); border-top-color: #C9A227; box-shadow: 0 15px 30px rgba(15, 45, 82, 0.1); }
-.class-title { font-size:24px; color:#0F2D52; font-weight:700; margin-bottom:20px; }
-.btn { display:block; text-align:center; background:#0F2D52; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; transition: 0.3s; }
-.btn:hover { background:#C9A227; }
+/* قسم الصفوف الدراسية - تنظيم محاكي للتطبيقات */
+.main-title { text-align: center; margin: 45px 0 20px; font-size: 24px; font-weight: 800; color: #0F2D52; position: relative; }
+.classes-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 45px; }
+.class-card { 
+    background: white; 
+    padding: 35px 25px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 25px rgba(15, 45, 82, 0.02); 
+    text-align: center; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    border: 1px solid rgba(15, 45, 82, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+.class-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #0F2D52; transition: 0.3s; }
+.class-card:hover { 
+    transform: translateY(-6px); 
+    box-shadow: 0 15px 35px rgba(15, 45, 82, 0.08); 
+    border-color: rgba(201, 162, 39, 0.2);
+}
+.class-card:hover::before { background: #C9A227; }
+.class-icon { font-size: 35px; margin-bottom: 15px; display: inline-block; }
+.class-title { font-size: 21px; color:#0F2D52; font-weight:700; margin-bottom: 20px; }
+.btn { 
+    display: block; 
+    text-align: center; 
+    background: #f0f4f9; 
+    color: #0F2D52; 
+    padding: 12px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: 0.3s; 
+    font-size: 14px;
+}
+.class-card:hover .btn { background: #0F2D52; color: white; }
+.btn:hover { background: #C9A227 !important; color: white !important; }
 
-/* قسم النصائح والتوجيهات الذهبية */
-.tips-section { background: #0F2D52; color: white; padding: 35px; border-radius: 15px; margin: 50px auto 20px; box-shadow: 0 10px 30px rgba(15, 45, 82, 0.2); }
-.tips-section h2 { font-size: 26px; color: #C9A227; margin-bottom: 25px; font-weight: 800; text-align: center; }
-.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-.tip-item { background: rgba(255, 255, 255, 0.07); padding: 20px; border-radius: 10px; border-right: 4px solid #C9A227; text-align: right; border-top: 1px solid rgba(255,255,255,0.05); }
-.tip-item h3 { font-size: 18px; color: #C9A227; margin-bottom: 8px; font-weight: 700; }
-.tip-item p { font-size: 14px; line-height: 1.6; color: #f5f7fa; }
+/* قسم التوجيهات الذهبية السفلي - نمط بطاقات الميزات */
+.tips-section { background: #0F2D52; color: white; padding: 40px 30px; border-radius: 24px; margin: 40px auto 10px; box-shadow: 0 15px 35px rgba(15, 45, 82, 0.15); }
+.tips-section h2 { font-size: 24px; color: #C9A227; margin-bottom: 30px; font-weight: 800; text-align: center; }
+.tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.tip-item { background: rgba(255, 255, 255, 0.05); padding: 22px; border-radius: 16px; border-right: 4px solid #C9A227; text-align: right; transition: 0.3s; }
+.tip-item:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-2px); }
+.tip-item h3 { font-size: 17px; color: #C9A227; margin-bottom: 8px; font-weight: 700; }
+.tip-item p { font-size: 13px; line-height: 1.6; color: #e2e8f0; }
 
+/* متجاوب مع الهواتف الذكية */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; text-align: center; }
     .title-box { order: -1; }
-    .logo-box { max-width: 120px; }
+    .logo-box { max-width: 100px; }
+    .schedule-section { padding: 20px 15px; }
 }
 </style>
 </head>
@@ -83,7 +125,7 @@ body {
 
     <section class="schedule-section">
         <h2>📅 جدول الاختبارات النهائية</h2>
-        <p class="sub-title">(اضغطي على الجدول أو الزر أدناه لفتحه في علامة تبويب مستقلة ومكبرة)</p>
+        <p class="sub-title">اضغطي على لوحة الجدول أو الزر أدناه لفتحه بشكل مكبر ومستقل</p>
         
         <div class="schedule-container">
             <a href="schedule.jpg" target="_blank" title="اضغطي لتكبير الجدول">
@@ -91,30 +133,37 @@ body {
             </a>
         </div>
         
-        <a href="schedule.jpg" target="_blank" class="btn-schedule">تكبير وفتح الجدول في صفحة مستقلة ↗️</a>
+        <a href="schedule.jpg" target="_blank" class="btn-schedule">
+            <span>فتح الجدول في صفحة مستقلة</span> 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
     </section>
 
-    <h2 class="main-title">📚 مراجعات ومواد الصفوف الدراسية</h2>
+    <h2 class="main-title">📚 بوابات الصفوف الدراسية</h2>
     <div class="classes-grid">
     
         <div class="class-card">
-            <div class="class-title">🎓 الصف الخامس</div>
-            <a href="grade5.html" class="btn">الدخول إلى الصف</a>
+            <div class="class-icon">✨</div>
+            <div class="class-title">الصف الخامس</div>
+            <a href="grade5.html" class="btn">دخول الصف</a>
         </div>
 
         <div class="class-card">
-            <div class="class-title">🎓 الصف السادس</div>
-            <a href="grade6.html" class="btn">الدخول إلى الصف</a>
+            <div class="class-icon">🌟</div>
+            <div class="class-title">الصف السادس</div>
+            <a href="grade6.html" class="btn">دخول الصف</a>
         </div>
 
         <div class="class-card">
-            <div class="class-title">🎓 الصف السابع</div>
-            <a href="grade7.html" class="btn">الدخول إلى الصف</a>
+            <div class="class-icon">🚀</div>
+            <div class="class-title">الصف السابع</div>
+            <a href="grade7.html" class="btn">دخول الصف</a>
         </div>
 
         <div class="class-card">
-            <div class="class-title">🎓 الصف الثامن</div>
-            <a href="grade8.html" class="btn">الدخول إلى الصف</a>
+            <div class="class-icon">🎓</div>
+            <div class="class-title">الصف الثامن</div>
+            <a href="grade8.html" class="btn">دخول الصف</a>
         </div>
 
     </div>
