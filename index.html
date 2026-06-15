@@ -2,39 +2,114 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>أكاديمية مربح الرقمية</title>
+    <title>أكاديمية مربح الرقمية - الترحيب</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; }
-        body { background: #f8fafc; padding-bottom: 50px; }
         
+        /* --- شاشة الترحيب البداية --- */
+        #welcome-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #0F2D52 0%, #1a4a82 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            transition: opacity 0.8s ease, visibility 0.8s;
+            overflow: hidden;
+        }
+
+        /* رسوم وأيقونات دراسية تطفو في الخلفية */
+        .bg-icons i {
+            position: absolute;
+            color: rgba(201, 162, 39, 0.2);
+            animation: float 6s infinite ease-in-out;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(20deg); }
+        }
+
+        .welcome-content {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .welcome-content h1 { font-size: 3.5rem; font-weight: 900; color: #C9A227; margin-bottom: 10px; }
+        .welcome-content p { font-size: 1.5rem; margin-bottom: 30px; opacity: 0.9; }
+
+        .enter-btn {
+            background: #C9A227;
+            color: #0F2D52;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .enter-btn:hover { background: white; transform: scale(1.1); }
+
+        /* حركات التحريك */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- الموقع الأصلي (يظهر بعد الضغط) --- */
+        body { background: #f8fafc; padding-bottom: 50px; }
         .header-section { background: white; padding: 25px 5%; border-bottom: 2px solid #e2e8f0; }
         .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
-        .main-title { font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 5px; }
-        .sub-title { font-size: 18px; font-weight: 700; color: #b45309; }
         .logo { width: 110px; height: auto; }
+        .main-title { font-size: 32px; font-weight: 900; color: #1e293b; }
+        .sub-title { font-size: 18px; font-weight: 700; color: #b45309; }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        
         .schedule-section { text-align: center; margin: 20px auto; max-width: 700px; }
         .schedule-img { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card { background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); text-align: center; border: 1px solid #edf2f7; }
-        .card h3 { font-size: 22px; color: #0f172a; margin-bottom: 15px; }
-        .btn { background: #1e293b; color: white; padding: 10px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; }
+        .card { background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #edf2f7; }
+        .btn { background: #1e293b; color: white; padding: 10px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 10px; }
 
-        /* قسم النصائح */
         .tips-section { background: #0F2D52; color: white; padding: 35px; border-radius: 20px; margin: 40px auto; }
         .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .tip-item { background: rgba(255, 255, 255, 0.07); padding: 20px; border-radius: 15px; border-right: 4px solid #C9A227; }
 
-        .timer-section { background: #064e3b; color: white; padding: 30px; border-radius: 20px; margin-top: 40px; text-align: center; }
+        .timer-section { background: #064e3b; color: white; padding: 30px; border-radius: 20px; text-align: center; }
         .timer-numbers { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
         .num-box { background: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px; min-width: 70px; }
     </style>
 </head>
 <body>
+
+    <div id="welcome-screen">
+        <div class="bg-icons">
+            <i class="fas fa-pen-nib" style="top:10%; left:10%;"></i>
+            <i class="fas fa-book-open" style="top:20%; right:15%;"></i>
+            <i class="fas fa-graduation-cap" style="bottom:15%; left:20%;"></i>
+            <i class="fas fa-pencil-alt" style="bottom:20%; right:10%;"></i>
+            <i class="fas fa-laptop-code" style="top:50%; left:5%;"></i>
+            <i class="fas fa-apple-alt" style="bottom:50%; right:5%;"></i>
+        </div>
+        
+        <div class="welcome-content">
+            <i class="fas fa-school" style="font-size: 5rem; color: #C9A227; margin-bottom: 20px;"></i>
+            <h1>أهلاً بكِ في أكاديمية مربح</h1>
+            <p>بوابتكِ الرقمية نحو القمة والتميز 🚀</p>
+            <button class="enter-btn" onclick="enterPlatform()">الدخول إلى المنصة</button>
+        </div>
+    </div>
 
     <header class="header-section">
         <div class="header-content">
@@ -87,14 +162,26 @@
     </div>
 
     <script>
+        // وظيفة إخفاء شاشة الترحيب
+        function enterPlatform() {
+            const screen = document.getElementById('welcome-screen');
+            screen.style.opacity = '0';
+            setTimeout(() => {
+                screen.style.display = 'none';
+            }, 800);
+        }
+
+        // كود المؤقت
         const target = new Date("June 24, 2026 09:00:00").getTime();
         setInterval(() => {
             const now = new Date().getTime();
             const diff = target - now;
-            document.getElementById("d").innerText = Math.floor(diff / (1000*60*60*24));
-            document.getElementById("h").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            document.getElementById("m").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
-            document.getElementById("s").innerText = Math.floor((diff % (1000*60)) / 1000);
+            if (diff > 0) {
+                document.getElementById("d").innerText = Math.floor(diff / (1000*60*60*24));
+                document.getElementById("h").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+                document.getElementById("m").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
+                document.getElementById("s").innerText = Math.floor((diff % (1000*60)) / 1000);
+            }
         }, 1000);
     </script>
 </body>
