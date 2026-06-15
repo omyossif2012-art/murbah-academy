@@ -140,6 +140,52 @@ body { 
             </div>
         </div>
     </section>
+  <section class="timer-section" style="background: #0F2D52; color: white; padding: 40px 20px; border-radius: 20px; margin: 40px auto; text-align: center; box-shadow: 0 10px 30px rgba(15, 45, 82, 0.2);">
+    <h2 style="color: #C9A227; font-size: 22px; margin-bottom: 20px;">الاختبارات النهائية تبدأ خلال</h2>
+    <div id="countdown" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <div class="time-box" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; min-width: 80px;">
+            <div id="days" style="font-size: 24px; font-weight: 800; color: #C9A227;">00</div>
+            <div style="font-size: 12px;">يوم</div>
+        </div>
+        <div class="time-box" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; min-width: 80px;">
+            <div id="hours" style="font-size: 24px; font-weight: 800; color: #C9A227;">00</div>
+            <div style="font-size: 12px;">ساعة</div>
+        </div>
+        <div class="time-box" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; min-width: 80px;">
+            <div id="minutes" style="font-size: 24px; font-weight: 800; color: #C9A227;">00</div>
+            <div style="font-size: 12px;">دقيقة</div>
+        </div>
+        <div class="time-box" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; min-width: 80px;">
+            <div id="seconds" style="font-size: 24px; font-weight: 800; color: #C9A227;">00</div>
+            <div style="font-size: 12px;">ثانية</div>
+        </div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666; font-size: 14px;">
+    <p style="font-weight: 700; color: #0F2D52;">طموحكِ ... دعمنا ... تفوقكِ</p>
+    <p style="margin-top: 10px;">© مدرسة مربح الحلقة الثانية بنات | العام الدراسي 2025 - 2026</p>
+</footer>
+
+<script>
+    // تاريخ بداية الاختبار (24 يونيو 2026)
+    const countDownDate = new Date("June 24, 2026 09:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    }, 1000);
+</script>
 
 </div>
 
