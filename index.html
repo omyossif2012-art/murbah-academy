@@ -6,9 +6,6 @@
 
 <title>منصة مراجعات مدرسة مربح الحلقة الثانية بنات</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -25,9 +22,10 @@ background:#f5f7fa;
 color:#0F2D52;
 }
 
+/* HEADER */
 .header{
-background:white;
-padding:25px;
+background:#fff;
+padding:20px;
 box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
@@ -37,28 +35,23 @@ justify-content:space-between;
 align-items:center;
 max-width:1200px;
 margin:auto;
-gap:20px;
-}
-
-.logo-container{
-text-align:center;
+gap:10px;
 }
 
 .logo-container img{
-width:110px;
-max-width:100%;
+width:90px;
 }
 
 .logo-placeholder{
-width:110px;
-height:110px;
+width:90px;
+height:90px;
 border:2px dashed #C9A227;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:12px;
+border-radius:10px;
+font-size:12px;
 color:#666;
-font-size:14px;
 }
 
 .title-container{
@@ -67,148 +60,110 @@ flex:1;
 }
 
 .title-container h1{
-font-size:36px;
-font-weight:800;
-color:#0F2D52;
+font-size:28px;
 }
 
 .title-container p{
-font-size:20px;
 color:#C9A227;
-margin-top:10px;
+margin-top:5px;
 }
 
+/* HERO */
 .hero{
-padding:80px 20px;
 text-align:center;
-background:linear-gradient(135deg,#ffffff,#edf3f9);
+padding:60px 20px;
+background:linear-gradient(#fff,#eef3f9);
 }
 
 .hero h2{
-font-size:38px;
-margin-bottom:20px;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .hero p{
-font-size:20px;
-max-width:900px;
-margin:auto;
-line-height:2;
-}
-
-.hero-btn{
-display:inline-block;
-margin-top:30px;
-padding:14px 35px;
-background:#C9A227;
-color:white;
-text-decoration:none;
-border-radius:10px;
 font-size:18px;
 }
 
+/* GRADES */
 .grades-section{
-padding:70px 20px;
+padding:50px 20px;
 text-align:center;
-}
-
-.grades-section h2{
-font-size:36px;
-margin-bottom:40px;
 }
 
 .grades-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1200px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:1000px;
 margin:auto;
 }
 
 .grade-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 4px 15px rgba(0,0,0,.08);
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
 transition:.3s;
 }
 
 .grade-card:hover{
-transform:translateY(-8px);
+transform:translateY(-5px);
 }
 
 .grade-card h3{
-font-size:28px;
-margin-bottom:15px;
-}
-
-.grade-card p{
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
 .grade-card a{
-background:#0F2D52;
-color:white;
-padding:10px 25px;
-border-radius:8px;
-text-decoration:none;
 display:inline-block;
+padding:10px 20px;
+background:#0F2D52;
+color:#fff;
+text-decoration:none;
+border-radius:8px;
 }
 
-.announcements{
-padding:60px 20px;
-}
-
-.announcements h2{
+/* FILES SECTION */
+.files-section{
+padding:50px 20px;
+background:#fff;
 text-align:center;
-margin-bottom:25px;
-font-size:34px;
 }
 
-.announcement-box{
-background:white;
-max-width:1000px;
+.file-box{
+max-width:700px;
 margin:auto;
-padding:30px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.announcement-box p{
+background:#f9fbff;
+padding:20px;
+border-radius:12px;
 margin-bottom:15px;
-font-size:18px;
+box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
+.file-box a{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+background:#C9A227;
+color:#fff;
+text-decoration:none;
+border-radius:6px;
+}
+
+/* FOOTER */
 footer{
 background:#0F2D52;
-color:white;
+color:#fff;
 text-align:center;
-padding:25px;
-margin-top:50px;
-}
-
-footer p{
-margin:8px;
+padding:20px;
+margin-top:40px;
 }
 
 @media(max-width:768px){
-
 .top-section{
 flex-direction:column;
+text-align:center;
 }
-
-.title-container h1{
-font-size:26px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.hero p{
-font-size:17px;
-}
-
 }
 
 </style>
@@ -217,103 +172,86 @@ font-size:17px;
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
 
   <div class="top-section">
 
     <div class="logo-container">
-      <img src="ministry-logo.jfif" alt="شعار الوزارة">
+      <img src="https://via.placeholder.com/90" alt="شعار الوزارة">
     </div>
 
     <div class="title-container">
-      <h1>منصة مراجعات مدرسة مربح الحلقة الثانية بنات</h1>
+      <h1>منصة مراجعات مدرسة مربح</h1>
       <p>مكتب العمليات فرع 5 - نطاق 8.3</p>
     </div>
 
-    <div class="logo-container">
-      <div class="logo-placeholder">
-        شعار المدرسة
-      </div>
+    <div class="logo-placeholder">
+      شعار المدرسة
     </div>
 
   </div>
 
 </header>
 
-</header>
-
+<!-- HERO -->
 <section class="hero">
-
-<h2>
-مرحبًا بكن في منصة مراجعات مدرسة مربح الحلقة الثانية بنات
-</h2>
-
-<p>
-منصة تعليمية تهدف إلى تسهيل الوصول إلى ملفات مراجعات الاختبارات النهائية لجميع المواد الدراسية للصفوف من الخامس إلى الثامن.
-</p>
-
-<a href="#grades" class="hero-btn">
-ابدأ التصفح
-</a>
-
+<h2>مرحبًا بكن في منصة المراجعات</h2>
+<p>اختاري الصف ثم تصفحي ملفات المراجعة بسهولة</p>
 </section>
 
-<section id="grades" class="grades-section">
+<!-- GRADES -->
+<section class="grades-section">
 
-<h2>اختاري صفك الدراسي</h2>
+<h2>الصفوف الدراسية</h2>
 
 <div class="grades-grid">
 
-<div class="grade-card">
-<h3>الصف الخامس</h3>
-<p>جميع مراجعات مواد الصف الخامس</p>
-<a href="#">الدخول إلى الصف</a>
-</div>
+  <div class="grade-card">
+    <h3>الصف الخامس</h3>
+  </div>
 
-<div class="grade-card">
-<h3>الصف السادس</h3>
-<p>جميع مراجعات مواد الصف السادس</p>
-<a href="#">الدخول إلى الصف</a>
-</div>
+  <div class="grade-card">
+    <h3>الصف السادس</h3>
+  </div>
 
-<div class="grade-card">
-<h3>الصف السابع</h3>
-<p>جميع مراجعات مواد الصف السابع</p>
-<a href="#">الدخول إلى الصف</a>
-</div>
+  <div class="grade-card">
+    <h3>الصف السابع</h3>
+  </div>
 
-<div class="grade-card">
-<h3>الصف الثامن</h3>
-<p>جميع مراجعات مواد الصف الثامن</p>
-<a href="#">الدخول إلى الصف</a>
-</div>
+  <div class="grade-card">
+    <h3>الصف الثامن</h3>
+  </div>
 
 </div>
 
 </section>
 
-<section class="announcements">
+<!-- FILES (عرض مباشر بدون صفحات إضافية) -->
+<section class="files-section">
 
-<h2>📢 إعلانات المدرسة</h2>
+<h2>📚 ملفات المراجعة</h2>
 
-<div class="announcement-box">
+<div class="file-box">
+<h3>رياضيات - الصف الخامس</h3>
+<a href="files/math5.pdf" target="_blank">فتح الملف</a>
+</div>
 
-<p>مرحبًا بكن في منصة مراجعات مدرسة مربح الحلقة الثانية بنات.</p>
+<div class="file-box">
+<h3>علوم - الصف الخامس</h3>
+<a href="files/science5.pdf" target="_blank">فتح الملف</a>
+</div>
 
-<p>سيتم تحديث ملفات المراجعة بشكل دوري.</p>
-
-<p>تابعن المنصة باستمرار للاطلاع على أحدث الملفات.</p>
-
+<div class="file-box">
+<h3>رياضيات - الصف السادس</h3>
+<a href="#">قريبًا</a>
 </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-
 <p>جميع الحقوق محفوظة © مدرسة مربح الحلقة الثانية بنات</p>
-
-<p>معًا نحو التميز 🇦🇪</p>
-
 </footer>
 
 </body>
