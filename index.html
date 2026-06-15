@@ -8,26 +8,27 @@
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; }
         body { background: #f8fafc; padding-bottom: 50px; }
         
-        /* الهيدر مع شعارات أكبر */
         .header-section { background: white; padding: 25px 5%; border-bottom: 2px solid #e2e8f0; }
         .header-content { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
         .main-title { font-size: 32px; font-weight: 900; color: #1e293b; margin-bottom: 5px; }
         .sub-title { font-size: 18px; font-weight: 700; color: #b45309; }
-        .logo { width: 110px; height: auto; } /* تم تكبير الشعار هنا */
+        .logo { width: 110px; height: auto; }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        /* الجدول مُصغر بشكل أكبر */
         .schedule-section { text-align: center; margin: 20px auto; max-width: 700px; }
         .schedule-img { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
-        /* البطاقات */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
         .card { background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); text-align: center; border: 1px solid #edf2f7; }
         .card h3 { font-size: 22px; color: #0f172a; margin-bottom: 15px; }
         .btn { background: #1e293b; color: white; padding: 10px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; }
 
-        /* المؤقت */
+        /* قسم النصائح */
+        .tips-section { background: #0F2D52; color: white; padding: 35px; border-radius: 20px; margin: 40px auto; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .tip-item { background: rgba(255, 255, 255, 0.07); padding: 20px; border-radius: 15px; border-right: 4px solid #C9A227; }
+
         .timer-section { background: #064e3b; color: white; padding: 30px; border-radius: 20px; margin-top: 40px; text-align: center; }
         .timer-numbers { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
         .num-box { background: rgba(255,255,255,0.1); padding: 10px; border-radius: 12px; min-width: 70px; }
@@ -58,6 +59,16 @@
             <div class="card"><h3>الصف السابع</h3><a href="grade7.html" class="btn">دخول</a></div>
             <div class="card"><h3>الصف الثامن</h3><a href="grade8.html" class="btn">دخول</a></div>
         </div>
+
+        <section class="tips-section">
+            <h2 style="color: #C9A227; text-align:center; margin-bottom: 20px;">💡 توجيهات ذهبية</h2>
+            <div class="tips-grid">
+                <div class="tip-item"><h3>✨ التوكل والدعاء</h3><p>ابدئي دراستكِ بالتسمية والدعاء.</p></div>
+                <div class="tip-item"><h3>⏱️ تنظيم الوقت</h3><p>قسّمي وقتكِ بذكاء بين المواد.</p></div>
+                <div class="tip-item"><h3>🍏 العقل السليم</h3><p>النوم الكافي والغذاء الصحي.</p></div>
+                <div class="tip-item"><h3>📝 الهدوء</h3><p>اقرئي الأسئلة بعناية وتوكلي على الله.</p></div>
+            </div>
+        </section>
 
         <section class="timer-section">
             <h2 style="color: #fbbf24; font-size: 20px;">الاختبارات النهائية تبدأ خلال</h2>
