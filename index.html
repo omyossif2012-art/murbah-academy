@@ -4,11 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>منصة مراجعات مدرسة مربح الحلقة الثانية بنات</title>
+<title>منصة مراجعات مدرسة مربح</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+  --primary:#0F2D52;
+  --gold:#C9A227;
+  --bg:#f4f7fb;
+}
 
 *{
 margin:0;
@@ -18,40 +24,45 @@ font-family:'Cairo',sans-serif;
 }
 
 body{
-background:#f5f7fa;
-color:#0F2D52;
+background:var(--bg);
+color:var(--primary);
 }
 
 /* HEADER */
 .header{
 background:#fff;
-padding:20px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+padding:18px 10px;
+box-shadow:0 6px 20px rgba(0,0,0,.06);
+position:sticky;
+top:0;
+z-index:10;
 }
 
 .top-section{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 max-width:1200px;
 margin:auto;
 gap:10px;
 }
 
 .logo-container img{
-width:90px;
+width:80px;
+filter:drop-shadow(0 3px 6px rgba(0,0,0,.1));
 }
 
 .logo-placeholder{
-width:90px;
-height:90px;
-border:2px dashed #C9A227;
+width:80px;
+height:80px;
+border:2px dashed var(--gold);
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:10px;
+border-radius:12px;
 font-size:12px;
-color:#666;
+color:#777;
+background:#fff7df;
 }
 
 .title-container{
@@ -60,110 +71,168 @@ flex:1;
 }
 
 .title-container h1{
-font-size:28px;
+font-size:26px;
+font-weight:800;
 }
 
 .title-container p{
-color:#C9A227;
-margin-top:5px;
+color:var(--gold);
+margin-top:4px;
+font-weight:600;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:60px 20px;
-background:linear-gradient(#fff,#eef3f9);
+padding:70px 20px;
+background:linear-gradient(135deg,#ffffff,#eef3fb);
 }
 
 .hero h2{
-font-size:28px;
+font-size:32px;
 margin-bottom:10px;
 }
 
 .hero p{
 font-size:18px;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#444;
 }
 
 /* GRADES */
 .grades-section{
-padding:50px 20px;
+padding:60px 20px;
 text-align:center;
+}
+
+.grades-section h2{
+font-size:30px;
+margin-bottom:25px;
 }
 
 .grades-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
 max-width:1000px;
 margin:auto;
 }
 
 .grade-card{
 background:#fff;
-padding:25px;
-border-radius:15px;
-box-shadow:0 3px 10px rgba(0,0,0,.08);
+padding:28px;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.06);
 transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.grade-card::before{
+content:'';
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:4px;
+background:var(--gold);
 }
 
 .grade-card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px);
+box-shadow:0 12px 25px rgba(0,0,0,.1);
 }
 
 .grade-card h3{
-margin-bottom:10px;
+font-size:22px;
+margin-bottom:12px;
 }
 
 .grade-card a{
 display:inline-block;
-padding:10px 20px;
-background:#0F2D52;
+margin-top:10px;
+padding:10px 22px;
+background:var(--primary);
 color:#fff;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
+transition:.3s;
 }
 
-/* FILES SECTION */
+.grade-card a:hover{
+background:var(--gold);
+color:#000;
+}
+
+/* FILES */
 .files-section{
-padding:50px 20px;
+padding:60px 20px;
 background:#fff;
 text-align:center;
 }
 
+.files-section h2{
+font-size:30px;
+margin-bottom:25px;
+}
+
 .file-box{
 max-width:700px;
-margin:auto;
+margin:12px auto;
 background:#f9fbff;
-padding:20px;
-border-radius:12px;
-margin-bottom:15px;
-box-shadow:0 2px 8px rgba(0,0,0,.05);
+padding:18px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 4px 10px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.file-box:hover{
+transform:scale(1.02);
 }
 
 .file-box a{
-display:inline-block;
-margin-top:10px;
-padding:8px 15px;
-background:#C9A227;
-color:#fff;
+padding:8px 16px;
+background:var(--gold);
+color:#000;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
+font-weight:600;
 }
 
 /* FOOTER */
 footer{
-background:#0F2D52;
+background:var(--primary);
 color:#fff;
 text-align:center;
-padding:20px;
+padding:25px;
 margin-top:40px;
 }
 
+footer p{
+margin:6px;
+}
+
 @media(max-width:768px){
+
 .top-section{
 flex-direction:column;
 text-align:center;
 }
+
+.file-box{
+flex-direction:column;
+gap:10px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
 }
 
 </style>
@@ -172,13 +241,12 @@ text-align:center;
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
 
   <div class="top-section">
 
     <div class="logo-container">
-      <img src="https://via.placeholder.com/90" alt="شعار الوزارة">
+      <img src="https://via.placeholder.com/80" alt="شعار الوزارة">
     </div>
 
     <div class="title-container">
@@ -194,13 +262,11 @@ text-align:center;
 
 </header>
 
-<!-- HERO -->
 <section class="hero">
-<h2>مرحبًا بكن في منصة المراجعات</h2>
-<p>اختاري الصف ثم تصفحي ملفات المراجعة بسهولة</p>
+<h2>منصة المراجعات النهائية 📚</h2>
+<p>تصفح الملفات بسهولة حسب الصف والمادة، وابدأ التحضير للاختبارات النهائية بثقة.</p>
 </section>
 
-<!-- GRADES -->
 <section class="grades-section">
 
 <h2>الصفوف الدراسية</h2>
@@ -209,49 +275,52 @@ text-align:center;
 
   <div class="grade-card">
     <h3>الصف الخامس</h3>
+    <a href="#files">تصفح</a>
   </div>
 
   <div class="grade-card">
     <h3>الصف السادس</h3>
+    <a href="#files">تصفح</a>
   </div>
 
   <div class="grade-card">
     <h3>الصف السابع</h3>
+    <a href="#files">تصفح</a>
   </div>
 
   <div class="grade-card">
     <h3>الصف الثامن</h3>
+    <a href="#files">تصفح</a>
   </div>
 
 </div>
 
 </section>
 
-<!-- FILES (عرض مباشر بدون صفحات إضافية) -->
-<section class="files-section">
+<section class="files-section" id="files">
 
-<h2>📚 ملفات المراجعة</h2>
+<h2>📂 الملفات الحديثة</h2>
 
 <div class="file-box">
-<h3>رياضيات - الصف الخامس</h3>
-<a href="files/math5.pdf" target="_blank">فتح الملف</a>
+<span>رياضيات - الصف الخامس</span>
+<a href="#">فتح</a>
 </div>
 
 <div class="file-box">
-<h3>علوم - الصف الخامس</h3>
-<a href="files/science5.pdf" target="_blank">فتح الملف</a>
+<span>علوم - الصف الخامس</span>
+<a href="#">فتح</a>
 </div>
 
 <div class="file-box">
-<h3>رياضيات - الصف السادس</h3>
+<span>رياضيات - الصف السادس</span>
 <a href="#">قريبًا</a>
 </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>جميع الحقوق محفوظة © مدرسة مربح الحلقة الثانية بنات</p>
+<p>جميع الحقوق محفوظة © مدرسة مربح</p>
+<p>معًا نحو التميز 🇦🇪</p>
 </footer>
 
 </body>
